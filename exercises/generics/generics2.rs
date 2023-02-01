@@ -5,15 +5,23 @@
 
 // I AM NOT DONE
 
-struct Wrapper {
-    value: u32,
+struct Wrapper<T> {
+    value: T,
 }
 
-impl Wrapper {
-    pub fn new(value: u32) -> Self {
+default impl<T> Wrapper<T> {
+    pub fn new(value: T) -> Self {
         Wrapper { value }
     }
 }
+
+
+// impl Wrapper<u32> {
+//     pub fn new(value: u32) -> Self {
+//         println!("{}", value);
+//         Wrapper { value }
+//     }
+// }
 
 #[cfg(test)]
 mod tests {
